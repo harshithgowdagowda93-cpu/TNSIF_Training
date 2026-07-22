@@ -13,14 +13,14 @@ public class FoodOrder {
         byte deliveryTime = 45;  
         short restaurantId = 12;
         
-        String customerName = "Anjali";   // corrected spelling
+        String customerName = "Anjali";  
         String[] foodItems = {"Burger", "Fries", "Coke"};
 
         System.out.println("Order Summary");
         System.out.println("Customer Name: " + customerName);
         System.out.println("Order Id: " + orderId);
         System.out.println("Restaurant Id: " + restaurantId);
-        System.out.println("Delivery Boy Contact: " + deliveryBoyPhone);
+        System.out.println("Delivery Boy Contact: " + deliveryBoyPhone); 
         System.out.println("Food Items:");
         for (String item : foodItems) {
             System.out.println(" - " + item);
