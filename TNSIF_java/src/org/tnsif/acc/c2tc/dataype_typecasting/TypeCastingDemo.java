@@ -1,4 +1,4 @@
-package org.insif.acc.c2tc.dataype_typecasting;
+package org.tnsif.acc.c2tc.dataype_typecasting;
 
 public class TypeCastingDemo {
 
