@@ -40,9 +40,6 @@ public class ThisDemo1 {
 		person.getName();
 		person.getAge();
 		person.displayDetails();
-		
-		
-
-	}
+		}
 
 }
