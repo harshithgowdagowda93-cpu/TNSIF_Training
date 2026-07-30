@@ -22,9 +22,5 @@ public class ThisDemo2 {
 	public static void main(String[] args) {
 		ProductBottle product=new ProductBottle(400);
 		System.out.println("Final Price :"+ product.calculateFinalPrice());
-		
-		
-
-	}
-
+		}
 }
