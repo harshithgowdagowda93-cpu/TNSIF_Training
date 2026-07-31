@@ -19,9 +19,9 @@ public class PolymorphismDemo1 {
 
 	public static void main(String[] args) {
 		addition add=new addition();
-		System.out.println("Two integers sum "+add.add(1, 3));
-		System.out.println("Three integres sum "+add.add(3, 6,8));
-		System.out.println("Two double datatype sum "+add.add(3.5,5.6));
+		System.out.println("Two integers sum "+add.add(1,2));
+		System.out.println("Three integres sum "+add.add(2,3,4));
+		System.out.println("Two double datatype sum "+add.add(4,5));
 		
 	}
 
