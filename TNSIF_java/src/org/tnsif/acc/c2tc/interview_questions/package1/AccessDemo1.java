@@ -14,8 +14,6 @@ public class AccessDemo1 {
 
         AccessDemo1 obj = new AccessDemo1();
 
-        // obj.display(); // Error: private method cannot be accessed directly
-
         obj.show();
     }
 }
