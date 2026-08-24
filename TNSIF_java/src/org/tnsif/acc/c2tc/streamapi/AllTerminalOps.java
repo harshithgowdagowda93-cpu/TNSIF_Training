@@ -1,117 +1,81 @@
-import java.util.List;
-import java.util.Optional;
+package org.tnsif.acc.c2tc.streamapi;
+
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 
-public class ALLTerminateOp {
+public class AllTerminalOps {
 
     public static void main(String[] args) {
 
-        List<Integer> numbers = Arrays.asList(3, 6, 8, 3, 9, 5, 7);
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 5, 6, 7, 8, 9);
 
-
-        // 1. forEach() - print each number
-        System.out.println("Numbers printed using forEach:");
-
-        numbers.stream()
-               .forEach(n -> System.out.print(n + " "));
-
+        // 1. forEach()
+        System.out.println("For Each:");
+        numbers.stream().forEach(n -> System.out.print(n + " "));
         System.out.println();
 
+        // 2. count()
+        long count = numbers.stream().count();
+        System.out.println("Count: " + count);
 
-        // 2. toArray() - convert Stream to Array
+        // 3. collect()
+        List<Integer> evenNumbers = numbers.stream()
+                .filter(n -> n % 2 == 0)
+                .collect(Collectors.toList());
 
-        Integer[] array = numbers.stream()
-                                  .toArray(size -> new Integer[size]);
+        System.out.println("Even Numbers: " + evenNumbers);
 
-        System.out.println("Array: " + Arrays.toString(array));
-
-
-        // 3. reduce() - sum of all numbers
-
+        // 4. reduce()
         int sum = numbers.stream()
-                         .reduce(0, (a, b) -> a + b);
+                .reduce(0, (a, b) -> a + b);
 
-        System.out.println("Sum of numbers: " + sum);
+        System.out.println("Sum: " + sum);
 
+        // 5. min()
+        int min = numbers.stream()
+                .min(Integer::compareTo)
+                .get();
 
-        // 4. collect() - collect unique numbers into List
+        System.out.println("Minimum: " + min);
 
-        List<Integer> uniqueNumbers = numbers.stream()
-                                             .distinct()
-                                             .collect(Collectors.toList());
+        // 6. max()
+        int max = numbers.stream()
+                .max(Integer::compareTo)
+                .get();
 
-        System.out.println("Unique numbers: " + uniqueNumbers);
+        System.out.println("Maximum: " + max);
 
+        // 7. anyMatch()
+        boolean anyEven = numbers.stream()
+                .anyMatch(n -> n % 2 == 0);
 
-        // 5. min() - find minimum number
+        System.out.println("Any Even: " + anyEven);
 
-        Optional<Integer> min = numbers.stream()
-                                       .min((a, b) -> a.compareTo(b));
-
-        min.ifPresent(value ->
-                System.out.println("Minimum number: " + value));
-
-
-        // 6. max() - find maximum number
-
-        Optional<Integer> max = numbers.stream()
-                                       .max((a, b) -> a.compareTo(b));
-
-        max.ifPresent(value ->
-                System.out.println("Maximum number: " + value));
-
-
-        // 7. count() - count number of elements
-
-        long count = numbers.stream()
-                            .count();
-
-        System.out.println("Count of numbers: " + count);
-
-
-        // 8. anyMatch() - check if ANY number is greater than 6
-
-        boolean anyGreaterThan = numbers.stream()
-                                        .anyMatch(n -> n > 6);
-
-        System.out.println("Any number greater than 6: "
-                           + anyGreaterThan);
-
-
-        // 9. allMatch() - check if ALL numbers are positive
-
+        // 8. allMatch()
         boolean allPositive = numbers.stream()
-                                     .allMatch(n -> n > 0);
+                .allMatch(n -> n > 0);
 
-        System.out.println("All numbers are positive: "
-                           + allPositive);
+        System.out.println("All Positive: " + allPositive);
 
-
-        // 10. noneMatch() - check if NO number is negative
-
+        // 9. noneMatch()
         boolean noneNegative = numbers.stream()
-                                      .noneMatch(n -> n < 0);
+                .noneMatch(n -> n < 0);
 
-        System.out.println("No number is negative: "
-                           + noneNegative);
+        System.out.println("None Negative: " + noneNegative);
 
+        // 10. findFirst()
+        int first = numbers.stream()
+                .findFirst()
+                .get();
 
-        // 11. findFirst() - find the first element
+        System.out.println("First Element: " + first);
 
-        Optional<Integer> first = numbers.stream()
-                                         .findFirst();
+        // 11. findAny()
+        int any = numbers.stream()
+                .findAny()
+                .get();
 
-        first.ifPresent(value ->
-                System.out.println("First number: " + value));
-
-
-        // 12. findAny() - find any element
-
-        Optional<Integer> any = numbers.stream()
-                                       .findAny();
-
-        any.ifPresent(value ->
-                System.out.println("Any number: " + value));
+        System.out.println("Any Element: " + any);
     }
 }
