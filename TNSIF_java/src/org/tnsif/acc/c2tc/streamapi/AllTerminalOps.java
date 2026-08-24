@@ -11,7 +11,7 @@ public class AllTerminalOps {
 		
 		List<Integer> numbers=Arrays.asList(3,6,8,3,9,5,7);
 		
-		//foreact -print each number
+		//foreach -print each number
 		
 		System.out.println("Numbers printed using foreach");
 		numbers.stream().forEach(n->System.out.print(n + " "));
