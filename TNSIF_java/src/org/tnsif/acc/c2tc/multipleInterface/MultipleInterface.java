@@ -1,4 +1,4 @@
-package org.tnsif.acc.c2tc.multipleinterface;
+package org.tnsif.acc.c2tc.multipleInterface;
 
 class SmartPhone implements Camera, MusicPlay {
 
