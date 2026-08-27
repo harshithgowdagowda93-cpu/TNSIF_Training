@@ -1,4 +1,4 @@
-package org.tnsif.acc.c2tc.dataype_typecasting;
+package org.tnsif.acc.c2tc.datatype_typecasting;
 
 public class FoodOrder {
 
