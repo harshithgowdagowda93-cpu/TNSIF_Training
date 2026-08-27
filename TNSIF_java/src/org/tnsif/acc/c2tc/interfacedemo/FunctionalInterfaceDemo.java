@@ -1,4 +1,4 @@
-package org.tnsif.acc.c2tc.interfaceDemo;
+package org.tnsif.acc.c2tc.interfacedemo;
 @FunctionalInterface
 interface Notification
 {
